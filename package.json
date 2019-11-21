@@ -1,0 +1,21 @@
+{
+  "name": "react-mwdtys",
+  "version": "0.0.0",
+  "private": true,
+  "dependencies": {
+    "prop-types": "^15.7.2",
+    "radium": "^0.26.0",
+    "react": "16.9.0",
+    "react-animations": "^1.0.0",
+    "react-dom": "16.9.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "devDependencies": {
+    "react-scripts": "latest"
+  }
+}

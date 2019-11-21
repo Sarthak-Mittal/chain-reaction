@@ -1,0 +1,48 @@
+body {
+  margin: 10px;
+  padding: 0;
+  font-family: sans-serif;
+  background: #f4f4f4;
+}
+
+.clear {
+  clear: both;
+  content: "";
+}
+
+.game {
+  max-width: 90%;
+  margin: 0 auto;
+  padding: 20px ;
+}
+.cell {
+  background: #adadad73;
+  border: 1px solid rgb(0, 0, 0);
+  float: left;
+  line-height: 30px;
+  height: 30px;
+  text-align: center;
+  width: 30px;
+  border-radius: 5px;
+  color: rgb(0, 0, 0);
+}
+
+.energy0 {
+  opacity: 0;
+}
+.energy1 {
+  opacity: 0.3;
+}
+.energy2 {
+  opacity: 0.6;
+}
+.energy3 {
+  opacity: 1;
+}
+.p1{
+  background: #00628b;
+}
+.p2{
+  background: #8b0000;
+}
+
