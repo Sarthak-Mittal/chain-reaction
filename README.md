@@ -1,3 +1,3 @@
 # chain-reaction
 
-[Edit on StackBlitz ⚡️](https://stackblitz.com/edit/chain-reaction)
+⚡️ [Play here] ⚡️ (https://chain-reaction.stackblitz.io)
