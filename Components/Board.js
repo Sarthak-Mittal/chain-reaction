@@ -53,12 +53,23 @@ class Board extends React.Component {
                 else if(grid[i][j].owner === "p2"){ p2Cells+=1 }
             }
         }
-        if(  (p1Cells + p2Cells) > 1){
-            if(p1Cells === 0){
-                alert("player 2 won")
+        if( (p1Cells + p2Cells) > 1){
+            if(p1Cells === 0){        
+                setTimeout(function() {
+                    alert("PLAYER 2 won. Click 'OK' to play again")                   
+                    grid = this.initBoardData(this.props.height, this.props.width)
+                    this.setState({ boardData : grid })
+                }.bind(this), 600)
+
             }else if(p2Cells === 0){
-                alert("player 1 won")
-            }    
+                setTimeout(function() {
+                    alert("PLAYER 1 won. Click 'OK' to play again")
+                    grid = this.initBoardData(this.props.height, this.props.width)
+                    this.setState({ boardData : grid })
+                }.bind(this), 600)
+
+
+            }
         }
     }
 
@@ -136,7 +147,6 @@ class Board extends React.Component {
 
     renderBoard(data){
 
-        // setTimeout(function() {
         return data.map((datarow) => {
             return datarow.map((dataitem) => {
                 return(
@@ -151,7 +161,7 @@ class Board extends React.Component {
                 )
             })
         })
-    // }.bind(this), 200)
+
 
     }
 
