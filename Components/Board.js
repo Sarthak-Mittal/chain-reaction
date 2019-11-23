@@ -1,11 +1,14 @@
 import React from "react"
 import Cell from "./Cell"
+import Modal from "./Modal"
 
 class Board extends React.Component {
 
     state={
         boardData : this.initBoardData(this.props.height, this.props.width),
-        whoseTurn : "p1"
+        whoseTurn : "p1",
+        modalShow : false,
+        modalMessage : null
     }
 
     initBoardData(height, width){
@@ -56,19 +59,18 @@ class Board extends React.Component {
         if( (p1Cells + p2Cells) > 1){
             if(p1Cells === 0){        
                 setTimeout(function() {
-                    alert("PLAYER 2 won. Click 'OK' to play again")                   
+                    this.showModal("Red won")
                     grid = this.initBoardData(this.props.height, this.props.width)
-                    this.setState({ boardData : grid })
-                }.bind(this), 600)
+                    this.setState({ boardData : grid })                   
+                }.bind(this), 400)
 
+                
             }else if(p2Cells === 0){
                 setTimeout(function() {
-                    alert("PLAYER 1 won. Click 'OK' to play again")
+                    this.showModal("Blue won")
                     grid = this.initBoardData(this.props.height, this.props.width)
                     this.setState({ boardData : grid })
-                }.bind(this), 600)
-
-
+                }.bind(this), 400)
             }
         }
     }
@@ -161,13 +163,23 @@ class Board extends React.Component {
                 )
             })
         })
+    }
 
+    hideModal = () => {   this.setState({ modalShow : false })   }
 
+    showModal = (message) => {   
+        this.setState({ modalMessage : message, modalShow : true })    
     }
 
     render() {  
         return (
-            <div className="grid"> { this.renderBoard(this.state.boardData) } </div>
+            <div>
+                <div className="grid"> { this.renderBoard(this.state.boardData) } </div>
+
+                <Modal show={this.state.modalShow} onClose={this.hideModal} btnText="Restart">
+                    <h4>{this.state.modalMessage}</h4>
+                </Modal>
+            </div>
         );
     }
 }
