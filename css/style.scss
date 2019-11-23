@@ -11,7 +11,7 @@ body {
 }
 
 .game {
-  max-width: 90%;
+  max-width: 30%;
   margin: 0 auto;
   padding: 20px ;
 }
@@ -27,18 +27,13 @@ body {
   color: rgb(0, 0, 0);
 }
 
-.energy0 {
-  opacity: 0;
-}
-.energy1 {
-  opacity: 0.3;
-}
-.energy2 {
-  opacity: 0.6;
-}
-.energy3 {
-  opacity: 1;
-}
+.regular1 { opacity: 0.3; }
+.regular2 { opacity: 0.6; }
+.regular3 { opacity: 1; }
+.edge1{ opacity: 0.5; }
+.edge2{ opacity: 1; }
+.corner1{ opacity: 1; }
+
 .p1{
   background: #00628b;
 }

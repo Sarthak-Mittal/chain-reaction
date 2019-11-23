@@ -3,10 +3,14 @@ import ReactDOM from 'react-dom';
 import Board from './Components/Board';
 import './css/style.scss'
 
+const height = 9
+const width = 9
+
+
 class Game extends React.Component {
     state = {
-      height: 9,
-      width: 9
+      height: height,
+      width: width
     };
   
     render() {
@@ -21,3 +25,5 @@ class Game extends React.Component {
 
 ReactDOM.render(<Game />, document.getElementById('root'));
 
+export {height};
+export {width};
