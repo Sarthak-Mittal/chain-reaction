@@ -1,8 +1,7 @@
 import React from "react"
 import {bounceIn} from 'react-animations'
 import Radium, {StyleRoot} from 'radium'
-import {height} from '../index.js'
-import {width} from '../index.js'
+import {height, width} from '../index.js'
 
 const styles = {
   bounce : {
@@ -19,18 +18,14 @@ class Cell extends React.Component {
     if(x ===  0 || x === height-1 || y === 0 || y === width-1){
         
         //All 4 corners
-        if( (x === y && x===0) || 
-            (x===0 && y=== width-1) || 
-            (x ===  height-1 && y===0) || 
-            (x ===  height-1 && y=== width-1)
-        ){ posType = "corner" }
+        if((x === y && x===0) || (x===0 && y=== width-1) || (x ===  height-1 && y===0) || (x ===  height-1 && y=== width-1)){
+          posType = "corner" 
+        }
                     
         //All edges except corner
-        else if( (x === 0) || 
-                 (x ===  height-1) || 
-                 (y === 0) || 
-                 (y ===  width-1)
-        ){ posType = "edge" }
+        else if( (x === 0) || (x ===  height-1) || (y === 0) || (y ===  width-1)){ 
+          posType = "edge" 
+        }
     }else{
         posType = "regular"
     }

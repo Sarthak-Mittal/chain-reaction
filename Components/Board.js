@@ -31,6 +31,7 @@ class Board extends React.Component {
     }
 
     handleCellClick(x,y){
+        
         let cellClicked = this.state.boardData[x][y].owner
 
         //Checking if cell clicked is not owned by opponent
@@ -155,7 +156,7 @@ class Board extends React.Component {
 
     render() {  
         return (
-            <div> { this.renderBoard(this.state.boardData) } </div>
+            <div className="grid"> { this.renderBoard(this.state.boardData) } </div>
         );
     }
 }
