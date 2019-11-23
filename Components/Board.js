@@ -65,7 +65,7 @@ class Board extends React.Component {
         let updatedData = this.state.boardData 
         updatedData[x][y].owner = this.state.whoseTurn
 
-        if(updatedData[x][y].val < 3){
+        if(updatedData[x][y].val < this.checkBurstLimit(x,y)){
             updatedData[x][y].val += 1;
         }else {
             //set current cell to null state
@@ -76,6 +76,31 @@ class Board extends React.Component {
             this.incrementNeighbours(x,y)
         }
         this.setState({ boardData : updatedData })
+    }
+
+    checkBurstLimit(x,y){
+
+        let limit = 0
+        if(x ===  0 || x === this.props.height-1 || y === 0 || y === this.props.width-1){
+            
+            //All 4 corners
+            if( (x === y && x===0) || 
+                (x===0 && y===this.props.width-1) || 
+                (x === this.props.height-1 && y===0) || 
+                (x === this.props.height-1 && y===this.props.width-1)
+            ){ limit = 1 }
+                        
+            //All edges except corner
+            else if( (x === 0) || 
+                     (x === this.props.height-1) || 
+                     (y === 0) || 
+                     (y === this.props.width-1)
+            ){ limit = 2 }
+        }else{
+            limit = 3
+        }
+
+        return limit
     }
 
     incrementNeighbours(x,y){
