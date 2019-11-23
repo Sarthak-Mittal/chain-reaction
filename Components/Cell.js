@@ -34,14 +34,20 @@ class Cell extends React.Component {
 
 
     render() {
-      const{data, onClick} = this.props
-      let className = "cell"  
+      const{data, onClick,turnOf} = this.props
+      let className = "cell" 
       let position = this.checkCellPosition(data.x,data.y)
       
+      if(turnOf === "p1" ){
+        className =  `turnOfp1 ${className}`
+      }else if(turnOf === "p2" ){
+        className =  `turnOfp2 ${className}`
+      }
+
       if(data.owner === "p1"){
-        className =  `p1 ${className }`
+        className =  `p1 ${className}`
       }else if(data.owner === "p2"){
-        className =  `p2 ${className }`
+        className =  `p2 ${className}`
       }
 
 
@@ -58,7 +64,11 @@ class Cell extends React.Component {
 
       return (
         <StyleRoot>
-    <div onClick = {onClick} className = {className} > <div style={styles.bounce}>{data.val}</div> </div>
+          <div onClick = {onClick} className = {className} > 
+            <div style={styles.bounce}>
+              {data.val}
+            </div>
+          </div>
         </StyleRoot>
       );
     }

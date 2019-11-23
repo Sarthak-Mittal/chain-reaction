@@ -144,6 +144,7 @@ class Board extends React.Component {
                         <Cell 
                             onClick = {() => this.handleCellClick(dataitem.x,dataitem.y)}
                             data = {dataitem}
+                            turnOf = {this.state.whoseTurn}
                         />
                         {(datarow[datarow.length - 1] === dataitem) ? <div className="clear" /> : ""}
                     </div>
