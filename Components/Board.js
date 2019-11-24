@@ -183,7 +183,7 @@ class Board extends React.Component {
 
     render() {  
         return (
-            <div>
+            <div className="box">
                 <div className="grid"> { this.renderBoard(this.state.boardData) } </div>
 
                 {/* Win result modal */}

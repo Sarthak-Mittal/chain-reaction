@@ -3,19 +3,24 @@ body {
   font-family: sans-serif;
   // border: 5px solid rgba(16, 224, 9, 0.801);
   background: #f4f4f4;
-  padding: 5% 0%;
+  // padding: 5% 0%;
 }
-
 .clear {
   clear: both;
-  content: "";
+  // content: "";
 }
 .game {
   // border: 5px solid rgba(73, 9, 224, 0.801);
   padding: 5% 0%;
-  width: 90%;
+  width: 80vw;
   margin:0 auto;
 }
+
+.box{
+  text-align: center;
+  margin: 0 auto;
+}
+
 .grid{
   // border: 5px solid rgb(224, 9, 9);
   padding: 5% 0%;

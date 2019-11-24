@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import Board from './Components/Board';
 import './css/style.scss'
 
-const height = 13
+const height = 9
 const width = 9
 
 
