@@ -5,14 +5,18 @@
     left: 0;
     right: 0;
     background-color: rgba(0,0,0,0.3);
-    padding: 150px;
+    padding: 10%;
+    overflow-y: auto;
 }
 
 .modal {
     background-color: #fff;
     border-radius: 15px;
-    max-width: 500px;
-    padding : 10% 10%;
+    max-width: 90%;
+    padding : 5%;
     margin: 0 auto;
+    text-align: center;
+}
+.modalFooter{
     text-align: center;
 }

@@ -7,8 +7,10 @@ class Board extends React.Component {
     state={
         boardData : this.initBoardData(this.props.height, this.props.width),
         whoseTurn : "p1",
-        modalShow : false,
-        modalMessage : null
+        modalShowWinResult : false,
+        winResultMessage : null,
+        modalRules : false,
+        gameRules : "These are game rules"
     }
 
     initBoardData(height, width){
@@ -45,6 +47,11 @@ class Board extends React.Component {
         }
     }
     
+    refreshGrid = () => {
+        let g = this.initBoardData(this.props.height, this.props.width)
+        this.setState({ boardData : g })
+    }
+
     checkWinner(){
         let grid = this.state.boardData
         let p1Cells = 0
@@ -59,17 +66,15 @@ class Board extends React.Component {
         if( (p1Cells + p2Cells) > 1){
             if(p1Cells === 0){        
                 setTimeout(function() {
-                    this.showModal("Red won")
-                    grid = this.initBoardData(this.props.height, this.props.width)
-                    this.setState({ boardData : grid })                   
+                    this.showWinResultModal("Red won")
+                    this.refreshGrid()
                 }.bind(this), 400)
 
                 
             }else if(p2Cells === 0){
                 setTimeout(function() {
-                    this.showModal("Blue won")
-                    grid = this.initBoardData(this.props.height, this.props.width)
-                    this.setState({ boardData : grid })
+                    this.showWinResultModal("Blue won")
+                    this.refreshGrid()
                 }.bind(this), 400)
             }
         }
@@ -165,10 +170,15 @@ class Board extends React.Component {
         })
     }
 
-    hideModal = () => {   this.setState({ modalShow : false })   }
+    hideModalWinResult = () => {   this.setState({ modalShowWinResult : false })   }
+    hideRulesModal = () => {   this.setState({ modalRules : false })   }
 
-    showModal = (message) => {   
-        this.setState({ modalMessage : message, modalShow : true })    
+    showWinResultModal = (message) => {   
+        this.setState({ winResultMessage : message, modalShowWinResult : true })    
+    }
+
+    showRulesModal = () => {   
+        this.setState({ modalRules : true })   
     }
 
     render() {  
@@ -176,9 +186,37 @@ class Board extends React.Component {
             <div>
                 <div className="grid"> { this.renderBoard(this.state.boardData) } </div>
 
-                <Modal show={this.state.modalShow} onClose={this.hideModal} btnText="Restart">
-                    <h4>{this.state.modalMessage}</h4>
+                {/* Win result modal */}
+                <Modal show={this.state.modalShowWinResult} onClose={this.hideModalWinResult} btnText="Restart">
+                    <h4>{this.state.winResultMessage}</h4>
                 </Modal>
+
+                {/* Game Rules Modal */}
+                <Modal show={this.state.modalRules} onClose={this.hideRulesModal} btnText=" X ">
+                    {/* <h4>{this.state.gameRules}</h4> */}
+                    <p>The gameplay takes place in an m <i>X</i> n board</p>
+                    <p>For each cell in the board, we define a critical mass. 
+                        The critical mass is equal to the number of orthogonally adjacent cells. 
+                        That would be 4 for usual cells, 3 for cells in the edge and 2 for cells in the corner.</p>
+                    <p>All cells are initially empty. 
+                        The Blue and the Red player take turns to place "mass" of their corresponding colors. 
+                        The Red player can only place an (red) mass in an empty cell or a cell which already contains
+                            one or more red mass. When two or more masses are placed in the same cell, they stack up.</p>
+                    <p>When a cell is loaded with a number of mass equal to its critical mass, the stack immediately explodes. 
+                        As a result of the explosion, to each of the orthogonally adjacent cells, a mass is added and the 
+                        initial cell looses as much mass as its critical mass. The explosions might result in overloading of 
+                        an adjacent cell and the chain reaction of explosion continues until every cell is stable</p>
+                    <p>When a red cell explodes and there are blue cells around, the blue cells are converted to red 
+                        and the other rules of explosions still follow. The same rule is applicable for other colors.</p>
+                    <p>The winner is the one who eliminates every other player's mass</p>
+                
+                    <h5>Rules are described for the two-player (Blue and Red) game but this could be generalized to any number of players.</h5>
+
+                </Modal>
+                
+                <button onClick={this.showRulesModal}> Rules </button>
+                <button onClick={this.refreshGrid}> Refresh </button>
+
             </div>
         );
     }
