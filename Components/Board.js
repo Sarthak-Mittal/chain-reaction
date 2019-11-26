@@ -200,7 +200,7 @@ class Board extends React.Component {
                         That would be 4 for usual cells, 3 for cells in the edge and 2 for cells in the corner.</p>
                     <p>All cells are initially empty. 
                         The Blue and the Red player take turns to place "mass" of their corresponding colors. 
-                        The Red player can only place an (red) mass in an empty cell or a cell which already contains
+                        The Red player can only place a (red) mass in an empty cell or a cell which already contains
                             one or more red mass. When two or more masses are placed in the same cell, they stack up.</p>
                     <p>When a cell is loaded with a number of mass equal to its critical mass, the stack immediately explodes. 
                         As a result of the explosion, to each of the orthogonally adjacent cells, a mass is added and the 
