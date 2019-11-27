@@ -1,6 +1,7 @@
 import React from "react"
 import Cell from "./Cell"
 import Modal from "./Modal"
+import Button from "./Button"
 
 class Board extends React.Component {
 
@@ -213,9 +214,8 @@ class Board extends React.Component {
                     <h5>Rules are described for the two-player (Blue and Red) game but this could be generalized to any number of players.</h5>
 
                 </Modal>
-                
-                <button onClick={this.showRulesModal}> Rules </button>
-                <button onClick={this.refreshGrid}> Refresh </button>
+                <Button btnText="Rules" onClick={this.showRulesModal} />
+                <Button btnText="Refresh" onClick={this.refreshGrid} />
 
             </div>
         );
