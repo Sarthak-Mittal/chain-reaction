@@ -1,13 +1,7 @@
 import React from "react"
-import {bounceIn} from 'react-animations'
-import Radium, {StyleRoot} from 'radium'
 import {height, width} from '../index.js'
 
 const styles = {
-  bounce : {
-    animation : 'x 1s',
-    animationName : Radium.keyframes(bounceIn, 'bounceIn')
-  }
 }
 
 class Cell extends React.Component {
@@ -63,13 +57,11 @@ class Cell extends React.Component {
       }
 
       return (
-        <StyleRoot>
           <div onClick = {onClick} className = {className} > 
             <div style={styles.bounce}>
               {data.val}
             </div>
           </div>
-        </StyleRoot>
       );
     }
   }
