@@ -7,21 +7,22 @@ body {
   clear: both;
 }
 .game {
-  padding: 5% 0%;
+  padding: 0% 0%;
   width: 100%;
-  margin:0 auto;
+  // margin:0 auto;
 }
 
 .box{
   text-align: center;
-  margin: 0 auto;
+  // margin: 0 auto;
+  
 }
 
 .grid{
-  // border: 5px solid rgb(224, 9, 9);
-  padding: 5% 0%;
+  padding: 2% 0%;
   width: 90%;
-  margin:0 auto;
+  // margin:0 auto;
+  display:inline-block;
 }
 
 .cell {
@@ -29,7 +30,7 @@ body {
   float: left;
   height: 33px;
   line-height: 35px;
-  text-align: center;
+  // text-align: center;
   width: 33px;
   border-radius: 5px;
   font-size: 20px;

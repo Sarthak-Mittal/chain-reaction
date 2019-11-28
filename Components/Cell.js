@@ -1,5 +1,6 @@
 import React from "react"
 import {height, width} from '../index.js'
+import '../css/button.scss'
 
 const styles = {
 }
@@ -29,7 +30,7 @@ class Cell extends React.Component {
 
     render() {
       const{data, onClick,turnOf} = this.props
-      let className = "cell" 
+      let className = "cell button" 
       let position = this.checkCellPosition(data.x,data.y)
       
       if(turnOf === "p1" ){
