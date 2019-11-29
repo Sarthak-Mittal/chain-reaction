@@ -7,34 +7,34 @@ body {
   clear: both;
 }
 .game {
-  padding: 0% 0%;
-  width: 100%;
-  // margin:0 auto;
+  padding: 5% 0%;
+  width: 80vw;
+  margin:0 auto;
 }
 
 .box{
   text-align: center;
-  // margin: 0 auto;
+  margin: 0 auto;
   
 }
 
 .grid{
-  padding: 2% 0%;
+  padding: 5% 0%;
   width: 90%;
-  // margin:0 auto;
-  display:inline-block;
+  margin:0 auto;
+  // display:inline-block;
 }
 
 .cell {
   background: #adadad73;
   float: left;
-  height: 33px;
-  line-height: 35px;
-  // text-align: center;
-  width: 33px;
-  border-radius: 5px;
-  font-size: 20px;
-  color : rgb(207, 207, 207); 
+  height: 8vmin;
+  line-height: 8vmin;
+  text-align: center;
+  width: 8vmin;
+  border-radius: 1.5vmin;
+  color: rgb(192, 192, 192);
+  font-size: 5vmin; 
 }
 .turnOfp1{
   box-shadow: 0.5px 0.5px 2px 1px #00628b;
