@@ -15,24 +15,26 @@ body {
 .box{
   text-align: center;
   margin: 0 auto;
+  
 }
 
 .grid{
   padding: 5% 0%;
   width: 90%;
   margin:0 auto;
+  // display:inline-block;
 }
 
 .cell {
   background: #adadad73;
   float: left;
-  height: 8vw;
-  line-height: 8vw;
+  height: 8vmin;
+  line-height: 8vmin;
   text-align: center;
-  width: 8vw;
-  border-radius: 1.5vw;
+  width: 8vmin;
+  border-radius: 1.5vmin;
   color: rgb(192, 192, 192);
-  font-size: 5vw;
+  font-size: 5vmin; 
 }
 .turnOfp1{
   box-shadow: 0.5px 0.5px 2px 1px #00628b;
