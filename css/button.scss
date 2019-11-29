@@ -1,16 +1,16 @@
 .myButton {
-	box-shadow: 0px 10px 14px -7px #bbdaf7;
+	box-shadow: 0vmin 10vmin 4vmin -3vmin #bbdaf7;
 	background:linear-gradient(to bottom, #79bbff 5%, #378de5 100%);
 	background-color:#79bbff;
-	border-radius:3vw;
+	border-radius:3vmin;
 	display:inline-block;
 	cursor:pointer;
 	color:#ffffff;
 	font-family: Calibri;
-	font-size:3vw;
-	padding:1vw 2vw;
+	font-size:3vmin;
+	padding:1vmin 2vmin;
 	text-decoration:none;
-	text-shadow:0px 1px 0px #528ecc;
+	text-shadow:0vmin 1vmin 0vmin #528ecc;
 }
 .myButton:hover {
 	background:linear-gradient(to bottom, #378de5 5%, #79bbff 100%);
