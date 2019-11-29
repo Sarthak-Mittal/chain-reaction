@@ -7,7 +7,7 @@ body {
   clear: both;
 }
 .game {
-  padding: 2vmin 2vmin;
+  padding: 1vmin 1vmin;
   width: 80vmin;
   margin:0 auto;
 }
@@ -19,11 +19,21 @@ body {
 }
 
 .grid{
-  padding: 5% 0%;
+  padding: 3vmin 0%;
   width: 90%;
   margin:0 auto;
-  // display:inline-block;
 }
+
+.game-head {
+    margin: 0 auto;
+    background: #19a0d9;
+    text-align: center;
+    color: #fff;
+    font-weight: bold;
+    font-size: 2vmax;
+    border-radius: 1vmax;
+    padding: 1.5vmin;
+  }
 
 .cell {
   background: #adadad73;
@@ -35,6 +45,9 @@ body {
   border-radius: 1.5vmin;
   color: rgb(192, 192, 192);
   font-size: 5vmin; 
+}
+.rules-para{
+  text-align: initial;
 }
 .turnOfp1{
   box-shadow: 0.5px 0.5px 2px 1px #00628b;

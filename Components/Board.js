@@ -185,6 +185,9 @@ class Board extends React.Component {
     render() {  
         return (
             <div className="box">
+                <div className="game-head">
+                  <span>CHAIN REACTION</span>
+                </div>
                 <div className="grid"> { this.renderBoard(this.state.boardData) } </div>
 
                 {/* Win result modal */}
@@ -195,24 +198,11 @@ class Board extends React.Component {
                 {/* Game Rules Modal */}
                 <Modal show={this.state.modalRules} onClose={this.hideRulesModal} btnText=" X ">
                     {/* <h4>{this.state.gameRules}</h4> */}
-                    <p>The gameplay takes place in an m <i>X</i> n board</p>
-                    <p>For each cell in the board, we define a critical mass. 
-                        The critical mass is equal to the number of orthogonally adjacent cells. 
-                        That would be 4 for usual cells, 3 for cells in the edge and 2 for cells in the corner.</p>
-                    <p>All cells are initially empty. 
-                        The Blue and the Red player take turns to place "mass" of their corresponding colors. 
-                        The Red player can only place a (red) mass in an empty cell or a cell which already contains
-                            one or more red mass. When two or more masses are placed in the same cell, they stack up.</p>
-                    <p>When a cell is loaded with a number of mass equal to its critical mass, the stack immediately explodes. 
-                        As a result of the explosion, to each of the orthogonally adjacent cells, a mass is added and the 
-                        initial cell looses as much mass as its critical mass. The explosions might result in overloading of 
-                        an adjacent cell and the chain reaction of explosion continues until every cell is stable</p>
-                    <p>When a red cell explodes and there are blue cells around, the blue cells are converted to red 
-                        and the other rules of explosions still follow. The same rule is applicable for other colors.</p>
-                    <p>The winner is the one who eliminates every other player's mass</p>
-                
-                    <h5>Rules are described for the two-player (Blue and Red) game but this could be generalized to any number of players.</h5>
-
+                    <p className="rules-para">Chain Reaction is strategy game where sole aim of a player is to own board by eliminating the opponent.</p>
+                    <p className="rules-para">A player can only place obrs in a blank cell or a cell that contains orbs of their own color.</p>
+                    <p className="rules-para">Once a cell has reached threshold, the orbs split into surrounding cells adding an extra orb and claiming the cell for player.</p>
+                    <p className="rules-para">As soon as a player looses all their orbs they are eliminated from game.</p>
+                    <p className="rules-para">The winner is the one who eliminates opponent's all the cell.</p>
                 </Modal>
                 <Button btnText="Rules" onClick={this.showRulesModal} />
                 <Button btnText="Refresh" onClick={this.refreshGrid} />
